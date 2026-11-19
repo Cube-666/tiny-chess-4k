@@ -1,16 +1,17 @@
-# TINY CHESS 4K
+# tiny-chess-4k
 
-The strongest chess engine that fits in 4 KB of Python, for the make.fun bounty [Build the strongest chess engine in 4 KB of Python](https://make.fun/bounty/tiny-chess-01) ($500, 20 paid places).
+[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/Cube-666/tiny-chess-4k/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/Cube-666/tiny-chess-4k/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-> Placeholder README — the builder rewrites this file fully in its recorded session.
+Tiny Chess 4K — a deterministic alpha-beta chess engine in 4,096 bytes of Python. 0x88 board, transposition table, quiescence search (captures, promotions, check evasions), null-move pruning, late move reductions, MVV-LVA + killer + history move ordering, and a tuned evaluation (material, piece-square tables, bishop pair, tapered king table). No clock, no randomness: a fixed 60,000-node budget per move, so a replay makes the same moves byte for byte. It plays the house gauntlet over HTTP and scores about 1,300 Elo in practice (floor 1,154).
 
-## What it does
+## Run it
 
-- `main.py` (at most 4,096 bytes) plays chess against the house gauntlet through the trial env: alpha-beta search with move ordering, quiescence, transposition table and a tuned evaluation, packed with the kit's own compress command.
-- Reads `/input/prompt.txt`, plays 8 games (one per house opponent), deterministic: same position and trial seed, same move.
+```sh
+MAKEFUN_ENV_URL=http://127.0.0.1:8080 python3 main.py
+```
 
-## Entry
+---
 
-- Repo: https://github.com/Cube-666/tiny-chess-4k
-- Bounty: https://make.fun/bounty/tiny-chess-01
-- License: MIT
+<sub>Entered on [make.fun](https://make.fun/?ref=k11s2hyb&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
